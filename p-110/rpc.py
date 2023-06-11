@@ -20,7 +20,7 @@ while True:
 	check , frame = camera.read()
 
 	# if we were sucessfully able to read the frame
-	if status:
+	if check:
 
 		# Flip the frame
 		frame = cv2.flip(frame , 1)
