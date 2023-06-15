@@ -34,8 +34,14 @@ while True:
 		norm_img = test_img/255.0
 		# get predictions from the model
 		prediction = model.predict(norm_img)
+		
+		# Converting the data in the array to percentage confidence 
+		rock = int(predictions[0][0]*100)
+		paper = int(predictions[0][1]*100)
+		scissor = int(predictions[0][2]*100)
 
-		print("Prediction: ",prediction)
+		# printing percentage confidence
+		print(f"Rock: {rock} %, Paper: {paper} %, Scissor: {scissor} %")
                 
 		# displaying the frames captured
 		cv2.imshow('feed' , frame)
